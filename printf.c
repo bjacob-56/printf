@@ -2,18 +2,27 @@
 
 void    str_convert(va_list ap, char **str, int *nb_char)
 {
+    int tab[4];
+
+    ft_zero(tab, 4);
+    while (**str == '0' || **str == '-' || **str == '.' || **str == '*')
+        fill_tab_indic(ap, str, tab);
+
+/*    for (int i = -1 ; i < 4 ; ++i)
+        printf("i = %d, tab[i] = %d\n", i, tab[i]); */
+//    printf("\np1\n"); ///////////////////////////////////////////////////////////////////////////
     if (**str == 'c')
-        str_char(ap, nb_char);
+        str_char(ap, nb_char, tab);
     if (**str == 's')
-        str_string(ap, nb_char);
+        str_string(ap, nb_char, tab);
     if (**str == 'p')
-        str_hexa(ap, nb_char);
+        str_add_hexa(ap, nb_char, tab);
     if (**str == 'i' || **str == 'd')
-        str_int(ap, nb_char);
+        str_int(ap, nb_char, tab);
     if (**str == 'u')
-        str_decimal(ap, nb_char);
+        str_decimal(ap, nb_char, tab);
     if (**str == 'x' || **str == 'X')
-        str_unsigned_hexa(ap, str, nb_char);
+        str_unsigned_hexa(ap, str, nb_char, tab);
     if (**str == '%')
         str_percent(nb_char);
 }
