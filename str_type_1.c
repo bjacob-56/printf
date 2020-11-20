@@ -7,6 +7,11 @@ void    str_int(va_list ap, int *nb_char, int *tab)
 
     i = va_arg(ap, int);
     len = ft_nbrlen_base(i, 10);
+    if (tab[0] < 0)
+    {
+        tab[0] *= -1;
+        *nb_char += ft_putspace(1, STDOUT);
+    }
     *nb_char += ft_put_zero_and_space(tab, len, STDOUT);
     *nb_char += ft_putnbr_fd(i, STDOUT);
 }

@@ -25,6 +25,8 @@ void    str_convert(va_list ap, char **str, int *nb_char)
         str_unsigned_hexa(ap, str, nb_char, tab);
     if (**str == '%')
         str_percent(nb_char);
+
+    // erreur a retourner ici ?
 }
 
 

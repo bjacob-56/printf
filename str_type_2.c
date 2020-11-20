@@ -7,7 +7,7 @@ void    fill_tab_indic(va_list ap, char **str, int *tab)
     if (**str == '-')
     {
         tab[1] = ft_atoi_simplify(ap, str);
-        tab[0] = 0;
+        tab[0] = 0; // 0 ou -1 ?
     }
     if (**str == '.')
         tab[2] = ft_atoi_simplify(ap, str);
@@ -24,6 +24,11 @@ void    str_add_hexa(va_list ap, int *nb_char, int *tab)
     p = va_arg(ap, void*);
     add = (long int)(p);
     len = ft_nbrlen_base(add, 16);
+    if (tab[0] < 0)
+    {
+        tab[0] *= -1;
+        *nb_char += ft_putspace(1, STDOUT);
+    }
     *nb_char += ft_put_zero_and_space_add(tab, len, STDOUT);
     *nb_char += print_base_fd(add, STDOUT, "0123456789abcdef");
 
@@ -47,7 +52,7 @@ int     ft_putchar_and_space_fd(int *tab, char c, int fd)
 {
     int nb_space;
 
-    nb_space = MAX(tab[0] - 1, 0);
+    nb_space = MAX(ABS(tab[0]) - 1, 0);
     return (ft_putspace(nb_space, fd) + ft_putchar_fd(c, fd));
 }
 

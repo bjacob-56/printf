@@ -20,14 +20,14 @@ int main()
     s = "abcd";
     str = "int = %i ou %d\nchar = %c\nstr = %s\nadd = %p\ndec = %u\nhexa = %x\nHEXA = %X\n%% = %%\n";
     str = "int = \
-%03.13i\n ou = \
-%03.13d\ncha = \
-%03.13c\nstr = \
-%03.13s\nadd = \
-%03.13p\ndec = \
-%03.13u\nhex = \
-%03.13x\nHEX = \
-%03.13X\n";
+%-3.4i\n ou = \
+%-3.4d\ncha = \
+%-3.4c\nstr = \
+%-3.4s\nadd = \
+%-3.4p\ndec = \
+%-3.4u\nhex = \
+%-3.4x\nHEX = \
+%-3.4X\n";
 
 //str = "s = '%018s'\n";
 
