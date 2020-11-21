@@ -1,16 +1,11 @@
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
 
 #include <stdio.h> // A RETIRER
-
-# define MAX(x, y) (x >= y ? x : y)
-# define MIN(x, y) (x <= y ? x : y)
-# define ABS(x) (x >= 0 ? x : -x)
-
 
 void    str_convert(va_list ap, char **str, int *nb_char);
 void    str_process(va_list ap, char **str, int *nb_char);
@@ -42,6 +37,11 @@ int     ft_put_zero_and_space_add(int *tab, int len, int fd);
 void    ft_zero(void *s, size_t n);
 int     ft_strlen(const char *str);
 int     ft_nbrlen_base(long int i, int l_base);
+
+int     ft_max(int x, int y);
+int     ft_min(int x, int y);
+int     ft_abs(int x);
+int     ft_is_digit(int i);
 
 #ifndef STDOUT
 # define STDOUT 1

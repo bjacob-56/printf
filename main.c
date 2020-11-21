@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "printf.h"
 
 int main()
 {
@@ -20,14 +20,14 @@ int main()
     s = "abcd";
     str = "int = %i ou %d\nchar = %c\nstr = %s\nadd = %p\ndec = %u\nhexa = %x\nHEXA = %X\n%% = %%\n";
     str = "int = \
-%-3.4i\n ou = \
-%-3.4d\ncha = \
-%-3.4c\nstr = \
-%-3.4s\nadd = \
-%-3.4p\ndec = \
-%-3.4u\nhex = \
-%-3.4x\nHEX = \
-%-3.4X\n";
+%-18.10i\n ou = \
+%-18.10d\ncha = \
+%-18.10c\nstr = \
+%-18.10s\nadd = \
+%-18.10p\ndec = \
+%-18.10u\nhex = \
+%-18.10x\nHEX = \
+%-18.10X\n\n";
 
 //str = "s = '%018s'\n";
 

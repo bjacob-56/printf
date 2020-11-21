@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "printf.h"
 
 void    ft_zero(void *s, size_t n)
 {

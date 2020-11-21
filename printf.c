@@ -1,11 +1,11 @@
-#include "ft_printf.h"
+#include "printf.h"
 
 void    str_convert(va_list ap, char **str, int *nb_char)
 {
     int tab[4];
 
     ft_zero(tab, 4);
-    while (**str == '0' || **str == '-' || **str == '.' || **str == '*')
+    while (ft_is_digit(**str) || **str == '-' || **str == '.' || **str == '*')
         fill_tab_indic(ap, str, tab);
 
 /*    for (int i = -1 ; i < 4 ; ++i)

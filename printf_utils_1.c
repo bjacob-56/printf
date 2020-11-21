@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "printf.h"
 
 int ft_putchar_fd(char c, int fd)
 {
@@ -12,7 +12,7 @@ int ft_putstrn_fd(char *s, int n, int fd)
 
     if (!s)
         return (0);
-    s_len = MIN(ft_strlen(s), n);
+    s_len = ft_min(ft_strlen(s), n);
     write(fd, s, s_len);
     return (s_len);
 }

@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "printf.h"
 
 int	ft_atoi_simplify(va_list ap, char **str)
 {
@@ -53,14 +53,14 @@ int ft_put_zero_and_space(int *tab, int len, int fd)
     int nb_space;
 
     nb_space = 0;
-    nb_zero = MAX(tab[0] - len, 0);
+    nb_zero = ft_max(tab[0] - len, 0);
     if (tab[2] > 0)
     {
-        nb_zero = MAX(tab[2] - len, 0);
+        nb_zero = ft_max(tab[2] - len, 0);
         if (len < tab[2])
-            nb_space = MAX(tab[0] - tab[2], 0);
+            nb_space = ft_max(tab[0] - tab[2], 0);
         else
-            nb_space = MAX(MIN(tab[0] - len, tab[0] - len), 0);
+            nb_space = ft_max(ft_min(tab[0] - len, tab[0] - len), 0);
     }
     return (ft_putspace(nb_space, fd) + ft_putzero(nb_zero, fd));
 }
@@ -71,14 +71,14 @@ int ft_put_zero_and_space_add(int *tab, int len, int fd)
     int nb_space;
 
     nb_space = 0;
-    nb_zero = MAX(tab[0] - len - 2, 0);
+    nb_zero = ft_max(tab[0] - len - 2, 0);
     if (tab[2] >= 0)
     {
-        nb_zero = MAX(tab[2] - len, 0);
+        nb_zero = ft_max(tab[2] - len, 0);
         if (tab[0] >  tab[2])
-            nb_space = MAX(tab[0] - (nb_zero + len + 2),0); 
+            nb_space = ft_max(tab[0] - (nb_zero + len + 2),0); 
         else
-            nb_space = MAX(tab[2] - (nb_zero + len + 2),0);
+            nb_space = ft_max(tab[2] - (nb_zero + len + 2),0);
     }
     ft_putspace(nb_space, fd);
     ft_putstrn_fd("0x", 2, fd);
